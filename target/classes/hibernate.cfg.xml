@@ -9,9 +9,12 @@
 
 	<session-factory>
 		
+		<!-- Create table automatically in Database -->
 		<property name="hibernate.hbm2ddl.auto">
 			update</property>
 		<property name="hibernate.show_sql">true</property>
+		
+		<!-- Database Connection -->
 		<property name="connection.url">jdbc:mysql://localhost:3306/test</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
@@ -19,6 +22,7 @@
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
 		<mapping resource="book.hbm.xml" />
+		<mapping resource="student.hbm.xml" />
 	</session-factory>
 
 
