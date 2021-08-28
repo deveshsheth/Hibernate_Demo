@@ -23,6 +23,14 @@
 
 		<mapping resource="book.hbm.xml" />
 		<mapping resource="student.hbm.xml" />
+		<mapping resource="onetoone.hbm.xml" />
+		<mapping resource="manytomany.hbm.xml" />
+		
+		<mapping class="com.bean.annotation.onetoone.EmployeesBean"/>
+		<mapping class="com.bean.annotation.onetoone.AddressBean"/>
+		
+		<mapping class="com.bean.annotation.onetomany.QuestionBean"/>
+		<mapping class="com.bean.annotation.onetomany.AnswerBean"/>
 	</session-factory>
 
 

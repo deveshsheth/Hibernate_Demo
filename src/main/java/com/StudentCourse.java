@@ -1,7 +1,5 @@
 package com;
 
-
-
 import java.util.ArrayList;
 
 import org.hibernate.Session;
@@ -9,18 +7,18 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.bean.CertificateBean;
-import com.bean.StudentBean;
+import com.bean.onetomany.CertificateBean;
+import com.bean.onetomany.StudentBean;
 
 public class StudentCourse {
 	
 	public static void main(String[] args) {
 		
-		//new StudentCourse().addStudent();
+		new StudentCourse().addStudent();
 		// new StudentCourse().getStudent();
 		// new StudentCourse().deleteStudent();
 		// new StudentCourse().addCertiForStudent();
-		new StudentCourse().deleteCertificate();
+		//new StudentCourse().deleteCertificate();
 		
 	}
 	
@@ -32,7 +30,7 @@ public class StudentCourse {
 		StudentBean sb = session.get(StudentBean.class, 11);// student
 		System.out.println(sb.getFirstName());
 
-		for (CertificateBean cb : sb.getCertificatBean()) {
+		for (CertificateBean cb : sb.getCertificateBean()) {
 			System.out.println(cb.getName());
 		}
 		session.close();
@@ -68,9 +66,9 @@ public class StudentCourse {
 		certificateBeans.add(c2);
 		certificateBeans.add(c3);
 		
-		sb1.setCertificatBean(certificateBeans);
-		sb2.setCertificatBean(certificateBeans);
-		sb3.setCertificatBean(certificateBeans);
+		sb1.setCertificateBean(certificateBeans);
+		sb2.setCertificateBean(certificateBeans);
+		sb3.setCertificateBean(certificateBeans);
 		
 		session.save(sb1);
 		session.save(sb2);
@@ -103,7 +101,7 @@ public class StudentCourse {
 		cb.setName("RoR");
 
 		StudentBean sb = session.get(StudentBean.class, 4);
-		sb.getCertificatBean().add(cb);
+		sb.getCertificateBean().add(cb);
 
 		session.save(sb);
 

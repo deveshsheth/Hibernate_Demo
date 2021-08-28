@@ -1,9 +1,11 @@
-package com.bean;
+package com.bean.onetomany;
 
 public class CertificateBean {
 	
 	int certificateId;
 	String name;
+	
+	
 	
 	public int getCertificateId() {
 		return certificateId;
